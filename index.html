@@ -3,361 +3,508 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Afia ✨</title>
-    <!-- Premium Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@300;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <title>For Afia 🐰💖</title>
+    <!-- Premium Fonts: Lora for text, Caveat for realistic handwriting -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
         }
-        
+
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(-45deg, #ffc3a0, #ffafbd, #ffc3a0, #ffafbd);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background: #e8e2db;
+            /* Realistic subtle wood/desk texture background */
+            background-image: radial-gradient(#d3cbc1 1px, transparent 1px);
+            background-size: 20px 20px;
+            font-family: 'Lora', serif;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-            color: #333;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Glassmorphism Panel (Ultra HDR Look) */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 32px rgba(255, 105, 180, 0.15);
-            border-radius: 24px;
-            padding: 40px 30px;
-            width: 90%;
-            max-width: 600px;
-            margin: 20px 0;
-        }
-
-        /* Envelope */
-        .envelope-container {
-            margin-top: 25vh;
-            cursor: pointer;
-            z-index: 10;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .envelope-container:hover {
-            transform: scale(1.05) translateY(-10px);
-        }
-        .envelope {
-            width: 320px;
-            height: 220px;
-            background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
-            position: relative;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-        .envelope::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 0; height: 0;
-            border-left: 160px solid transparent;
-            border-right: 160px solid transparent;
-            border-top: 130px solid #ff4b72;
-            z-index: 3;
-            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-            transform-origin: top;
-        }
-        .envelope::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 0;
-            border-left: 160px solid rgba(255,255,255,0.1);
-            border-right: 160px solid rgba(255,255,255,0.1);
-            border-bottom: 110px solid rgba(255,255,255,0.2);
-            z-index: 2;
-            border-bottom-left-radius: 12px;
-            border-bottom-right-radius: 12px;
-            pointer-events: none;
-        }
-        .envelope.open::before {
-            transform: rotateX(180deg);
-            z-index: 1;
-        }
-
-        .tap-text {
-            text-align: center;
-            color: #d81b60;
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-top: 25px;
-            letter-spacing: 1px;
-            animation: pulseText 2s infinite;
-        }
-
-        @keyframes pulseText {
-            0%, 100% { opacity: 1; transform: translateY(0); }
-            50% { opacity: 0.6; transform: translateY(-5px); }
-        }
-
-        /* Content Area */
-        #content {
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 1s ease-out;
-            margin-bottom: 100px;
-            margin-top: 40px;
-        }
-        #content.visible {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Elegant Letter */
-        .letter-content {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2rem;
-            line-height: 1.6;
-            color: #2c001e;
-            text-align: left;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
-        }
-        .letter-header {
-            font-family: 'Playfair Display', serif;
-            color: #d81b60;
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        /* Spotify Section */
-        .spotify-wrapper {
-            width: 100%;
-            margin: 30px 0;
-        }
-        .spotify-wrapper h3 {
-            font-family: 'Playfair Display', serif;
-            color: #d81b60;
-            text-align: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        iframe {
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
-            border-radius: 12px;
-        }
-
-        /* Buttons Section */
-        .proposal-text {
-            font-family: 'Playfair Display', serif;
-            color: #d81b60;
-            font-size: 2.2rem;
-            text-align: center;
-            margin: 20px 0 30px 0;
-            font-weight: 600;
-        }
-        
-        .buttons-container {
-            position: relative;
-            height: 100px;
-            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            overflow-x: hidden;
         }
 
-        /* Ultimate YES Button */
-        #yesBtn {
-            background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
-            color: white;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.4rem;
-            padding: 15px 45px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(255, 8, 68, 0.4);
-            transition: all 0.3s ease;
-            z-index: 20;
-            animation: pulseBtn 2s infinite;
+        /* --- REALISTIC ENVELOPE --- */
+        .scene {
+            perspective: 1200px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
         }
-        @keyframes pulseBtn {
-            0% { box-shadow: 0 0 0 0 rgba(255, 8, 68, 0.6); }
-            70% { box-shadow: 0 0 0 20px rgba(255, 8, 68, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 8, 68, 0); }
+
+        .envelope-wrapper {
+            position: relative;
+            width: 340px;
+            height: 230px;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .envelope-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .envelope-back {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: #d4b5a3;
+            border-radius: 4px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border: 1px solid #c8a38f;
+        }
+
+        .envelope-front {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        /* Left and Right flaps */
+        .envelope-front::before, .envelope-front::after {
+            content: '';
+            position: absolute;
+            width: 0; height: 0;
+            z-index: 4;
+        }
+        .envelope-front::before {
+            left: 0; top: 0;
+            border-left: 170px solid #ecd5c5;
+            border-top: 115px solid transparent;
+            border-bottom: 115px solid transparent;
+        }
+        .envelope-front::after {
+            right: 0; top: 0;
+            border-right: 170px solid #e3c7b4;
+            border-top: 115px solid transparent;
+            border-bottom: 115px solid transparent;
+        }
+
+        /* Bottom Flap */
+        .envelope-bottom {
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 0; height: 0;
+            border-left: 170px solid transparent;
+            border-right: 170px solid transparent;
+            border-bottom: 120px solid #f0dfd1;
+            z-index: 5;
+            pointer-events: none;
+            filter: drop-shadow(0 -3px 3px rgba(0,0,0,0.05));
+        }
+
+        /* Top Flap (The one that opens) */
+        .envelope-flap {
+            position: absolute;
+            top: 0; left: 0;
+            width: 0; height: 0;
+            border-left: 170px solid transparent;
+            border-right: 170px solid transparent;
+            border-top: 130px solid #e1c4b1;
+            z-index: 6;
+            transform-origin: top;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), z-index 0s 0.3s;
+            filter: drop-shadow(0 4px 4px rgba(0,0,0,0.1));
+        }
+
+        /* Realistic Wax Seal */
+        .wax-seal {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 45px;
+            height: 45px;
+            background: radial-gradient(circle, #b81c22 40%, #870b10 100%);
+            border-radius: 50%;
+            z-index: 7;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffcccc;
+            font-family: 'Lora', serif;
+            font-weight: bold;
+            font-size: 20px;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+            border: 2px solid #75070c;
+        }
+
+        .envelope-wrapper.open .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 2;
+            filter: drop-shadow(0 -4px 4px rgba(0,0,0,0.1));
+        }
+        .envelope-wrapper.open .wax-seal {
+            display: none;
+        }
+
+        /* Tap Instruction */
+        .tap-instruction {
+            position: absolute;
+            bottom: -40px;
+            width: 100%;
+            text-align: center;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            color: #6a5e55;
+            animation: float 2s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* --- REALISTIC PAPER LETTER --- */
+        .paper-letter {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 320px;
+            height: 210px;
+            background: #fffcf7;
+            border-radius: 2px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 3;
+            transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            /* Subtle paper texture */
+            background-image: 
+                linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+                linear-gradient(#eee .1em, transparent .1em);
+            background-size: 100% 1.2em;
+        }
+
+        /* When letter pulls out and expands */
+        .paper-letter.pulled-out {
+            opacity: 1;
+            top: 5vh;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90vw;
+            max-width: 700px;
+            height: auto;
+            min-height: 90vh;
+            z-index: 100;
+            padding: 40px 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2), inset 0 0 40px rgba(200, 180, 160, 0.1);
+        }
+
+        /* Letter Typography */
+        .letter-content {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            line-height: 1.5;
+            color: #2b2623;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .letter-content p {
+            margin-bottom: 15px;
+        }
+
+        /* --- BUNNY ANIMATION --- */
+        .bunny-container {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 60px;
+            animation: hop 3s infinite ease-in-out;
+        }
+        @keyframes hop {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .bunny-svg {
+            width: 100%;
+            height: auto;
+            fill: #a89f91;
+        }
+
+        /* --- SPOTIFY EMBEDS --- */
+        .spotify-container {
+            width: 100%;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed #d1c7bd;
+        }
+        .spotify-container h3 {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            color: #6a5e55;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .iframe-wrap {
+            margin-bottom: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        /* --- BUTTONS & MINIGAME --- */
+        .proposal-question {
+            font-family: 'Lora', serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #870b10;
+            text-align: center;
+            margin: 40px 0 30px;
+        }
+
+        .buttons-wrapper {
+            position: relative;
+            width: 100%;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        button {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding: 14px 40px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #yesBtn {
+            background: #2e7d32;
+            color: white;
+            border: none;
+            box-shadow: 0 6px 15px rgba(46, 125, 50, 0.3);
+            z-index: 10;
         }
         #yesBtn:hover {
-            transform: scale(1.1) translateY(-3px);
-            background: linear-gradient(135deg, #ff0844 0%, #ff4b72 100%);
+            background: #1b5e20;
+            transform: scale(1.05);
         }
 
-        /* Ultra Smooth NO Button */
+        /* Funny Giggly No Button */
         #noBtn {
-            background: rgba(255, 255, 255, 0.8);
-            color: #ff4b72;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            font-size: 1.2rem;
-            padding: 15px 40px;
-            border: 2px solid #ff4b72;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            /* This makes the movement perfectly smooth */
-            transition: top 0.3s cubic-bezier(0.25, 1, 0.5, 1), left 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+            background: #fff;
+            color: #d32f2f;
+            border: 2px solid #d32f2f;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             position: absolute;
-            z-index: 15;
             left: 55%;
+            z-index: 5;
+            transition: top 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), left 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
-        /* Success Screen */
-        #success {
+        .wiggle {
+            animation: wiggleAnim 0.3s ease-in-out;
+        }
+        @keyframes wiggleAnim {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-15deg) scale(1.1); }
+            50% { transform: rotate(15deg) scale(1.1); }
+            75% { transform: rotate(-15deg) scale(1.1); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+
+        /* --- SUCCESS NOTE --- */
+        #success-note {
             display: none;
-            margin-top: 10vh;
-            margin-bottom: 50px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90vw;
+            max-width: 500px;
+            background: #fffcf7;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.3);
             text-align: center;
+            z-index: 200;
+            /* Polaroid / Notecard look */
+            border-top: 15px solid #d4b5a3;
         }
-        .success-title {
-            font-family: 'Playfair Display', serif;
-            color: #d81b60;
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
+        
         .success-text {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Caveat', cursive;
             font-size: 2.2rem;
-            color: #2c001e;
-            margin-bottom: 30px;
-            line-height: 1.5;
+            color: #2b2623;
+            margin-bottom: 25px;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
 
-    <!-- Envelope -->
-    <div class="envelope-container" id="envelope-container" onclick="openEnvelope()">
-        <div class="envelope" id="envelope"></div>
-        <div class="tap-text" id="tap-text">Tap to open 💌</div>
+    <!-- 3D Realistic Envelope -->
+    <div class="scene" id="scene">
+        <div class="envelope-wrapper" id="envelope-wrapper" onclick="openLetter()">
+            <div class="envelope-back"></div>
+            
+            <!-- THE REALISTIC LETTER -->
+            <div class="paper-letter" id="paper-letter">
+                
+                <!-- Cute SVG Bunny Graphic -->
+                <div class="bunny-container">
+                    <svg class="bunny-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M410.3 129.4c-14.8-19.1-39.6-32.5-66.3-32.5-22.9 0-43.2 10.4-56.5 25.8-13.3-15.4-33.6-25.8-56.5-25.8-26.7 0-51.5 13.4-66.3 32.5-17.7 22.8-24.3 53.6-18.4 86.6 6.8 38 29.5 73.1 63.8 98.9l77.4 58.2 77.4-58.2c34.3-25.8 57-60.9 63.8-98.9 5.9-33-0.7-63.8-18.4-86.6zM256 122.9c37.5-68.5 16-122.9 16-122.9s-53.7-25-115.3 35.8c-10.4 10.3-19.5 21.6-27.1 33.6-5.8-19.2-14.6-36.8-26-52-32.4-43.2-83.3-31-83.3-31s14.8 49.3 52.8 82.3c21.8 19 46.8 28.5 69.8 30.6-2.4 8.7-3.9 17.6-4.5 26.8-16-17.3-38.3-27.8-62.4-27.8-15.5 0-30 4.1-42.5 11.2 5.1 27 19.3 50.8 39.8 67 25 19.7 57 28 89.2 24.3 8.3 22 23.3 40.6 42.8 53.9l22.4 15.3c-2.4 1.5-4.8 2.8-7.2 4.1-36.2 19.1-84 21.1-125 5.5-35.3-13.4-63.5-39.6-80.1-74.4-4.8-10.1-16.7-14.4-26.8-9.6-10.1 4.8-14.4 16.7-9.6 26.8 22 46.1 59.5 80.9 106.3 98.6 15 5.7 30.7 8.5 46.4 8.5 35 0 69.6-11.2 99.4-32.7l30.8 21.1c25 17.1 53 26 81.3 26 31.8 0 63.3-11.4 88.8-32.5 25.1-20.9 41.5-49.9 46-81.5 5.2-36.3-5.2-71-29.2-97.7-18.7-20.8-43.5-33.8-70.1-36.6 4.3-10.3 6.6-21.6 6.6-33.4 0-42-29.7-77.9-69.6-87.1-15.1-20.8-43.7-32.4-74.1-32.4z"/>
+                    </svg>
+                </div>
+
+                <div class="letter-content">
+                    <p>Dear Afia,</p>
+                    <p>I know I am relatively new in your life, but honestly, every single moment I spend talking to you just makes me want to know you more. You have this beautiful, contagious energy and a laugh that completely makes my day. 🐰</p>
+                    <p>I want to be the guy who learns all your little quirks, who supports your dreams, and who makes you smile when you're having a bad day. I want to build something real and beautiful with you, one step at a time.</p>
+                    <p>Yours always,<br>Wahib ❤️</p>
+                </div>
+
+                <div class="spotify-container">
+                    <h3>🎶 Songs that remind me of you</h3>
+                    <div class="iframe-wrap">
+                        <iframe src="https://open.spotify.com/embed/track/50x1Ic8CaXkYNvjmxe3WXy?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="iframe-wrap">
+                        <iframe src="https://open.spotify.com/embed/track/1Q7EgiMOuwDcB0PJC6AzON?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                    <div class="iframe-wrap">
+                        <iframe src="https://open.spotify.com/embed/track/1Y3LN4zO1Edc2EluIoSPJN?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div class="proposal-question">Afia, will you be my girlfriend? 🥺</div>
+                
+                <div class="buttons-wrapper">
+                    <button id="yesBtn" onclick="sayYes()">YES!</button>
+                    <!-- Giggly No Button -->
+                    <button id="noBtn" onmouseover="funnyDodge(event)" ontouchstart="funnyDodge(event)">
+                        No
+                    </button>
+                </div>
+            </div>
+            
+            <div class="envelope-front"></div>
+            <div class="envelope-bottom"></div>
+            <div class="envelope-flap"></div>
+            <div class="wax-seal">W</div>
+            <div class="tap-instruction" id="tap-instruction">Tap to open...</div>
+        </div>
     </div>
 
-    <!-- Main Content -->
-    <div id="content" class="glass-panel">
-        
-        <div class="letter-header">For You</div>
-        
-        <div class="letter-content">
-            Dear Afia,<br><br>
-            We may not know everything about each other just yet, but from the moments we’ve shared, I know one thing for certain: I want to know everything about you.<br><br>
-            I want to learn what makes you laugh, understand your dreams, and be a part of your future. Every time we talk, I find myself wanting to be closer to you. You have this beautiful energy that I can't seem to get enough of.<br><br>
-            I want to give us a chance to build something amazing together, to learn about each other, and see where this beautiful beginning could take us.<br><br>
-            Yours,<br>Wahib ❤️
-        </div>
-
-        <div class="spotify-wrapper">
-            <h3>Songs that remind me of you ✨</h3>
-            <iframe src="https://open.spotify.com/embed/track/50x1Ic8CaXkYNvjmxe3WXy?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <iframe src="https://open.spotify.com/embed/track/1Q7EgiMOuwDcB0PJC6AzON?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-            <iframe src="https://open.spotify.com/embed/track/1Y3LN4zO1Edc2EluIoSPJN?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        </div>
-
-        <div class="proposal-text">Afia, will you be my girlfriend? 🥺</div>
-        
-        <div class="buttons-container">
-            <button id="yesBtn" onclick="sayYes()">YES!</button>
-            <button id="noBtn" onmouseover="dodge(event)" ontouchstart="dodge(event)">No</button>
-        </div>
-    </div>
-
-    <!-- Success Message & New Song -->
-    <div id="success" class="glass-panel">
-        <h1 class="success-title">She said YES! 🎉💖</h1>
+    <!-- Final Realistic Note -->
+    <div id="success-note">
         <div class="success-text">
-            My heart is literally racing. Thank you for giving me this chance, Afia. I promise to spend my days making you smile and learning all the little things that make you, you. <br><br>
-            This is the start of our beautiful future. Listen to this song, it's exactly how I feel right now.
+            You just made me the happiest guy in the world, Afia! 🐰💖<br><br>
+            I promise to make every day an adventure. Listen to this song... it's exactly how my heart feels right now.
         </div>
-        
-        <!-- The New Spotify Song -->
-        <iframe src="https://open.spotify.com/embed/track/5bHDGWyIFML1LYXZWTD5MF?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <div class="iframe-wrap" style="margin-top: 20px;">
+            <iframe src="https://open.spotify.com/embed/track/5bHDGWyIFML1LYXZWTD5MF?utm_source=generator" width="100%" height="152" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
     </div>
 
     <script>
-        // Open Envelope
-        function openEnvelope() {
-            const envelope = document.getElementById('envelope');
+        let isOpened = false;
+
+        function openLetter() {
+            if (isOpened) return;
+            isOpened = true;
+            
+            const envelope = document.getElementById('envelope-wrapper');
+            const letter = document.getElementById('paper-letter');
+            const instruction = document.getElementById('tap-instruction');
+            
             envelope.classList.add('open');
-            document.getElementById('tap-text').style.opacity = '0';
+            instruction.style.display = 'none';
             
+            // Wait for flap to open, then pull letter out
             setTimeout(() => {
-                document.getElementById('envelope-container').style.display = 'none';
-                const content = document.getElementById('content');
-                content.style.display = 'flex';
-                // Trigger reflow for fade-in effect
-                void content.offsetWidth;
-                content.classList.add('visible');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 800);
+                letter.style.opacity = '1';
+                letter.style.transform = 'translateY(-200px)';
+                
+                // Wait for it to clear envelope, then expand to full screen
+                setTimeout(() => {
+                    envelope.style.display = 'none'; // Hide envelope entirely
+                    letter.classList.add('pulled-out');
+                    document.body.style.overflowY = 'auto'; // allow scrolling now
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 800);
+            }, 600);
         }
 
-        // Ultra Smooth Dodging Logic
+        // Funny Giggly Dodging Logic
         const noBtn = document.getElementById('noBtn');
-        function dodge(e) {
-            // Prevent default touch behavior so it doesn't accidentally click
-            if(e) e.preventDefault(); 
+        const funnyPhrases = [
+            "Too slow! 🐰", 
+            "Catch me! 💨", 
+            "Nope! 🤭", 
+            "Try again! 😜", 
+            "Missed me!", 
+            "Nuh-uh! 🐇", 
+            "Still no? 😂"
+        ];
+        
+        function funnyDodge(e) {
+            e.preventDefault(); // Prevent accidental clicks on mobile
             
-            // Get viewport dimensions minus button dimensions and padding
-            const maxX = window.innerWidth - noBtn.offsetWidth - 20;
-            const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+            // Add Wiggle animation
+            noBtn.classList.add('wiggle');
+            setTimeout(() => noBtn.classList.remove('wiggle'), 300);
+
+            // Change Text Randomly
+            noBtn.innerHTML = funnyPhrases[Math.floor(Math.random() * funnyPhrases.length)];
+
+            // Calculate Random Position
+            const container = document.getElementById('paper-letter');
+            const maxX = container.offsetWidth - noBtn.offsetWidth - 20;
+            // Limit Y so it doesn't jump too far out of view
+            const maxY = 150; 
             
-            // Generate random positions
             let newX = Math.random() * maxX;
-            let newY = Math.random() * maxY;
+            let newY = (Math.random() * maxY) - (maxY/2); // Jump around the current area
             
-            // Apply new position with fixed absolute coordinates
-            noBtn.style.position = 'fixed';
+            noBtn.style.position = 'absolute';
             noBtn.style.left = Math.max(10, newX) + 'px';
-            noBtn.style.top = Math.max(10, newY) + 'px';
+            noBtn.style.top = `calc(50% + ${newY}px)`;
         }
 
-        // Yes Button Logic
+        // Yes Logic
         function sayYes() {
-            document.getElementById('content').style.display = 'none';
-            
-            const success = document.getElementById('success');
-            success.style.display = 'block';
-            
+            document.getElementById('paper-letter').style.display = 'none';
+            document.getElementById('success-note').style.display = 'block';
             window.scrollTo({ top: 0, behavior: 'smooth' });
             createConfetti();
         }
 
-        // Confetti Effect
         function createConfetti() {
-            const colors = ['#ff0844', '#ffb199', '#ff4b72', '#ffffff', '#ffd1dc'];
-            for(let i = 0; i < 150; i++) {
+            const colors = ['#2e7d32', '#d32f2f', '#d4b5a3', '#ffcccc', '#870b10'];
+            for(let i = 0; i < 120; i++) {
                 let confetti = document.createElement('div');
                 confetti.style.position = 'fixed';
                 confetti.style.left = Math.random() * 100 + 'vw';
                 confetti.style.top = -10 + 'px';
-                confetti.style.width = (Math.random() * 10 + 5) + 'px';
-                confetti.style.height = (Math.random() * 5 + 5) + 'px';
+                confetti.style.width = (Math.random() * 10 + 6) + 'px';
+                confetti.style.height = (Math.random() * 5 + 6) + 'px';
                 confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                // Mix of circles and squares
                 confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
                 confetti.style.zIndex = '9999';
                 confetti.style.pointerEvents = 'none';
@@ -369,7 +516,7 @@
                     { transform: `translate3d(${Math.random()*200 - 100}px, 100vh, 0) rotate(${Math.random()*720}deg)`, opacity: 0 }
                 ], {
                     duration: fallDuration * 1000,
-                    easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+                    easing: 'linear',
                     fill: 'forwards'
                 });
             }
